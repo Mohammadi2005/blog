@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">log in</a>
+                    <a class="nav-link" href="login.blade.php">log in</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">sign up</a>
