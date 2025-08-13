@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>log in</title>
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <style>
+@extends('layouts.app')
 
+@section('title')
+    Login
+@endsection
 
-    </style>
-</head>
-<body class="dark-back">
-<section class="container d-grid justify-content-center align-items-center">
+@section('main')
+    <section class="container d-grid justify-content-center align-items-center">
     <h1 class="text-center text-light postino">
         PostIno
     </h1>
@@ -31,5 +25,4 @@
         </div>
     </form>
 </section>
-</body>
-</html>
+@endsection

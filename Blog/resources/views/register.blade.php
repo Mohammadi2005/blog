@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>register</title>
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-</head>
-<body class="dark-back">
-<section class="container">
+@extends('layouts.app')
+
+@section('title')
+    Register
+@endsection
+
+@section('main')
+    <section class="container">
     <div class="d-grid justify-content-center align-items-center">
         <h1 class="text-center text-light postino px-5 ">
             PostIno
@@ -41,5 +39,5 @@
         </form>
     </div>
 </section>
-</body>
-</html>
+@endsection
+
