@@ -187,13 +187,17 @@
   box-sizing: border-box;
 }
 
+.dark-back {
+    background-color: rgba(0, 0, 0, 0.9);
+}
 
 .myform{
     width: 40vw;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border: 2px solid rgba(0, 0, 0, 0.6);
     box-shadow: 1px 1px 16px rgba(255, 255, 255, 0.9);
+    margin: 4vw;
 }
 .inp {
     font-size: 14px;
