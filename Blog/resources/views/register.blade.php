@@ -6,11 +6,11 @@
 
 @section('main')
     <section class="container">
-    <div class="d-grid justify-content-center align-items-center">
-        <h1 class="text-center text-light postino px-5 ">
+    <div class="row justify-content-center align-items-center">
+        <h1 class="text-center text-light postino col-12 mt-4">
             PostIno
         </h1>
-        <form method="post" class="myform" enctype="multipart/form-data" action="{{route("check-register")}}">
+        <form method="post" class="myform col-5 my-5" enctype="multipart/form-data" action="{{route("check-register")}}">
             @csrf
             <h3 class="m-5 text-center">register</h3>
             <div class="form-group m-3">

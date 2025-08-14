@@ -18,5 +18,5 @@ Route::post('/register', [RegisterController::class, 'checkRegister'])->name('ch
 Route::get('/posts', [PostsController::class, 'index']);
 Route::get('/create_post', [PostsController::class, 'create']);
 Route::post('/create_post', [PostsController::class, 'checkCreatePost'])->name('check-create-post');
-
+Route::get('/posts_user/{id}', [PostsController::class, 'postsUser']);
 

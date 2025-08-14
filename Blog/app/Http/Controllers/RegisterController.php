@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -27,6 +28,11 @@ class RegisterController extends Controller
             'age' => $request['age'],
         ]);
 
-        return view('posts');
+//        $posts = Post::all();
+        $posts = Post::with('user:id,username')->get();
+        $users = User::get(['username', 'id']);
+
+        return view('posts', compact('posts', 'users'));
+
     }
 }

@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
     public function index()
     {
-        return view('posts');
+//        $posts = Post::all();
+        $posts = Post::with('user:id,username')->get();
+        $users = User::get(['username', 'id']);
+
+        return view('posts', compact('posts', 'users'));
     }
 
     public function create()
@@ -26,9 +31,7 @@ class PostsController extends Controller
         ]);
 
         $user = $request->session()->get('user');
-//        dd($user->id);
-//        return view('welcome');
-//        dd($request['title'], $request['content'], $request['status'], $request['user_id']);
+
         Post::create([
             'title' => $request['title'],
             'content' => $request['content'],
@@ -36,9 +39,18 @@ class PostsController extends Controller
             'user_id' => $user['id'],
         ]);
 
-        return redirect('/posts');
+//        $posts = Post::all();
+        $posts = Post::with('user:id,username')->get();
+        $users = User::get(['username', 'id']);
+
+        return view('posts', compact('posts', 'users'));
     }
 
+    public function postsUser($id){
+        $posts = Post::where('user_id','=', $id)->get();
+        $user = User::where('id','=', $id)->get('username');
+        dd($posts, $user);
+    }
     public function show(string $id)
     {
         //

@@ -5,11 +5,12 @@
 @endsection
 
 @section('main')
-    <section class="container d-grid justify-content-center align-items-center">
-        <h1 class="text-center text-light postino">
+    <section class="container">
+        <div class="row justify-content-center align-items-center">
+        <h1 class="text-center text-light postino col-12 mt-4">
             PostIno
         </h1>
-        <form method="post" enctype="multipart/form-data" class="myform" action="{{route('check-create-post')}}">
+        <form method="post" enctype="multipart/form-data" class="myform col-5 my-5" action="{{route('check-create-post')}}">
             @csrf
             <h3 class="m-5 text-center">create new post</h3>
             <div class="form-group m-3">
@@ -31,5 +32,6 @@
                 <input type="submit" value="create post" class="inp btnform">
             </div>
         </form>
+        </div>
     </section>
 @endsection

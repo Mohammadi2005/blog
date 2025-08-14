@@ -187,48 +187,6 @@
   box-sizing: border-box;
 }
 
-.dark-back {
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.myform{
-    width: 40vw;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(0, 0, 0, 0.6);
-    box-shadow: 1px 1px 16px rgba(255, 255, 255, 0.9);
-    margin: 4vw;
-}
-.inp {
-    font-size: 14px;
-    box-sizing: border-box;
-    background-color: rgba(14, 13, 13, 0.6);
-    height: 40px;
-    width: 100%;
-    padding: 0px 11px;
-    font-weight: 300;
-    color: whitesmoke;
-    border-radius: 13px;
-    border: 2px solid rgba(255, 255, 255, 0.07);
-}
-.lab {
-    font-size: 14px;
-    margin-left: 10px;
-    margin-bottom: 3px;
-}
-.inp:focus{
-    border: 3px solid rgba(255, 255, 255, 0.07);
-    outline: 1px solid rgb(249, 249, 250);
-}
-.btnform {
-    background-color: #0a58ca;
-}
-.postino{
-    font-size: 44px;
-    font-family: cursive;
-    margin-top: 20px;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -839,8 +797,8 @@ progress {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  /*padding-right: calc(var(--bs-gutter-x) * 0.5);*/
+  /*padding-left: calc(var(--bs-gutter-x) * 0.5);*/
   margin-top: var(--bs-gutter-y);
 }
 
@@ -12080,6 +12038,91 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+
+.dark-back {
+    /*background-color: rgba(0, 0, 0, 0.9);*/
+    background-color: #000000;
+    background-image: linear-gradient(to right top,rgb(140, 169, 80), rgb(124, 232, 238))
+}
+
+.myform{
+    /*width: 40vw;*/
+    border-radius: 10px;
+    /*background-color: rgba(0, 0,0, 0.1);*/
+    /*border: 2px solid rgba(0, 0, 0, 0.6);*/
+    /*box-shadow: 1px 1px 16px rgba(255, 255, 255, 0.5);*/
+    /*padding-right: calc(var(--bs-gutter-x) * 0);*/
+    /*padding-left: calc(var(--bs-gutter-x) * 0);*/
+
+    font-family: cursive;
+    color: white;
+    background-color: rgba(5, 5, 5, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.13);
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*margin: auto;*/
+    z-index: 2;
+    box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+}
+
+.inp {
+    font-size: 16px;
+    box-sizing: border-box;
+    /*background-color: rgba(14, 13, 13, 0.6);*/
+    height: 50px;
+    width: 100%;
+    padding: 0px 11px;
+    font-weight: 300;
+    font-family: cursive;
+    color: whitesmoke;
+    /*border-radius: 13px;*/
+    border: 2px solid rgba(255, 255, 255, 0.07);
+
+
+
+    background-color: rgba(255, 255, 255, 0.07);
+    /*height: 50px;*/
+    /*width: 100%;*/
+    /*padding: 0px 10px;*/
+    font-weight: 300;
+    /*color: whitesmoke;*/
+    border-radius: 5px;
+    /*border: 2px solid rgba(255, 255, 255, 0.07);*/
+}
+
+inp:focus{
+    border: 3px solid rgba(255, 255, 255, 0.07);
+    outline: 1px solid rgb(249, 249, 250);
+}
+
+.lab {
+    color: whitesmoke;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+.inp:focus{
+    border: 3px solid rgba(255, 255, 255, 0.07);
+    outline: 1px solid rgb(249, 249, 250);
+}
+.btnform {
+    background-color: white;
+    color: #000000;
+}
+.postino{
+    font-size: 44px;
+    font-family: cursive;
+    margin-top: 20px;
+}
+
+.a-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
