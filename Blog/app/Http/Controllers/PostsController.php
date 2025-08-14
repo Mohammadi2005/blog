@@ -68,6 +68,27 @@ class PostsController extends Controller
 
     }
 
+    public function editPost($post_id){
+        $post = Post::findOrFail($post_id);
+        return view('edit_post', compact('post'));
+    }
+
+    public function updatePost(Request $request, $post_id){
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'status' => 'required',
+        ]);
+
+
+        $post = Post::findOrFail($post_id);
+        $post->update([
+            'title' => $request['title'],
+            'content' => $request['content'],
+            'status' => $request['status'],
+        ]);
+        return redirect()->route('posts.index')->with('success', 'Post updated successfully');
+    }
     public function show(string $id)
     {
         //

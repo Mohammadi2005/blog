@@ -52,14 +52,13 @@
                                         <form method="post" action="{{route('delete_post', $post->id)}}">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <a class="btn btn-dark  mt-3 card-link">Edit</a>
+                            <a class="btn btn-dark  mt-3 card-link" href="{{route('edit_post', $post->id)}}" >Edit</a>
                         </div>
                     </div>
                 @endforeach
