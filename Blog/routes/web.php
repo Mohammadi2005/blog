@@ -15,8 +15,10 @@ Route::post('/login', [LoginController::class, 'checkLogin'])->name('check-login
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'checkRegister'])->name('check-register');
 
-Route::get('/posts', [PostsController::class, 'index']);
+Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
 Route::get('/create_post', [PostsController::class, 'create']);
 Route::post('/create_post', [PostsController::class, 'checkCreatePost'])->name('check-create-post');
-Route::get('/posts_user/{id}', [PostsController::class, 'postsUser']);
+Route::get('/posts_user/{user_id}', [PostsController::class, 'postsUser']);
+Route::get('/my_posts/{user_id}', [PostsController::class, 'myPosts']);
+Route::delete('/delete_post/{post_id}', [PostsController::class, 'deletePost'])->name('delete_post');
 

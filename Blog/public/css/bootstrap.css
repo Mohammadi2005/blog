@@ -12043,8 +12043,10 @@ textarea.form-control-lg {
 
 .dark-back {
     /*background-color: rgba(0, 0, 0, 0.9);*/
-    background-color: #000000;
-    background-image: linear-gradient(to right top,rgb(140, 169, 80), rgb(124, 232, 238))
+    /*background-color: #000000;*/
+    background-image: linear-gradient(to right top,rgb(140, 169, 80), rgb(124, 232, 238));
+    width: 100%;
+    height: 100%;
 }
 
 .myform{

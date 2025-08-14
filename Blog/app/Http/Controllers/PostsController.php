@@ -49,8 +49,25 @@ class PostsController extends Controller
     public function postsUser($id){
         $posts = Post::where('user_id','=', $id)->get();
         $user = User::where('id','=', $id)->get('username');
-        dd($posts, $user);
+        return view('posts_user', compact('posts', 'user'));
+//        dd($posts, $user);
     }
+
+    public function myPosts($id){
+        $posts = Post::where('user_id','=', $id)->get();
+        $user = User::where('id','=', $id)->get('username');
+        return view('my_posts', compact('posts', 'user'));
+        //        dd($posts);
+    }
+
+    public function deletePost($post_id){
+        $post = Post::findOrFail($post_id);
+        $post->delete();
+
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully');
+
+    }
+
     public function show(string $id)
     {
         //
@@ -66,7 +83,7 @@ class PostsController extends Controller
         //
     }
 
-    public function destroy(string $id)
+    public function destroy($id)
     {
         //
     }
