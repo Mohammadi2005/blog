@@ -9,7 +9,7 @@
 {{--    <script src="js/bootstrap.js"></script>--}}
 {{--    <link rel="stylesheet" href="css/bootstrap.css">--}}
 </head>
-<body class="dark-back">
+<body class="">
     @yield('main')
 </body>
 </html>

@@ -17,7 +17,7 @@
                     <div class="col-3">
                         <div class="row justify-content-between align-items-center">
                             <a class="btn btn-light col-5 my-2 px-1 ms-3" href="create_post">create post</a>
-                            <a class="btn btn-light col-5 my-2 px-1 me-3" href="my_posts/{{session()->get('user')->id}}">my posts</a>
+                            <a class="btn btn-light col-5 my-2 px-1 me-3" href="my_posts/{{session()->get('user_id')}}">my posts</a>
                         </div>
                         <div class="">
                             <div class="p-3 card m-1">
@@ -41,6 +41,7 @@
                                     @else
                                         <p class="mb-0">updated at : {{$post->updated_at}}</p>
                                     @endif
+                                    <a class="card-link btn btn-primary mt-4" href="comments/{{$post->id}}">Comments</a>
                                 </div>
                             </div>
                         @endforeach

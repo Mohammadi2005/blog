@@ -14,4 +14,7 @@ class User extends Model
     public function posts(){
         return $this->hasMany(Post::class, 'user_id', 'id');
     }
+    public function comments(){
+        return $this->hasMany(Comment::class, 'post_id', 'id');
+    }
 }

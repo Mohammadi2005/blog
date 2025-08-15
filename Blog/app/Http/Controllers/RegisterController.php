@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'age' => 'required',
         ]);
 
-        User::create([
+        $user = User::create([
             'username' => $request['username'],
             'password' => bcrypt($request['password']),
             'email' => $request['email'],
@@ -29,6 +29,7 @@ class RegisterController extends Controller
         ]);
 
 //        $posts = Post::all();
+        $request->session()->put('user_id', $user->id);
         $posts = Post::with('user:id,username')->get();
         $users = User::get(['username', 'id']);
 

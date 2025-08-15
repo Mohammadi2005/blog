@@ -24,3 +24,5 @@ Route::delete('/delete_post/{post_id}', [PostsController::class, 'deletePost'])-
 Route::get('/edit_post/{post_id}', [PostsController::class, 'editPost'])->name('edit_post');
 Route::put('/edit_post/{post_id}', [PostsController::class, 'updatePost'])->name('update_post');
 
+Route::get('/comments/{post_id}', [PostsController::class, 'commentsPost']);
+Route::post('/send_comment/{post_id}', [PostsController::class, 'sendComment'])->name('send_comment');

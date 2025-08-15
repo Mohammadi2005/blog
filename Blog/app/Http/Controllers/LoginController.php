@@ -24,7 +24,7 @@ class LoginController extends Controller
 
 
         if($user && Hash::check($request['password'], $user->password)){
-            $request->session()->put('user', $user);
+            $request->session()->put('user_id', $user->id);
             return redirect('/posts');
         } else {
             return back()->withErrors([

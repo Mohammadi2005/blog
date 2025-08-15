@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+
 
 class PostsController extends Controller
 {
@@ -30,13 +32,13 @@ class PostsController extends Controller
             'status' => 'required',
         ]);
 
-        $user = $request->session()->get('user');
+        $user_id = $request->session()->get('user_id');
 
         Post::create([
             'title' => $request['title'],
             'content' => $request['content'],
             'status' => $request['status'],
-            'user_id' => $user['id'],
+            'user_id' => $user_id,
         ]);
 
 //        $posts = Post::all();
@@ -89,6 +91,30 @@ class PostsController extends Controller
         ]);
         return redirect()->route('posts.index')->with('success', 'Post updated successfully');
     }
+
+    public function commentsPost($post_id){
+        $post = Post::findOrFail($post_id);
+        $comments = $post->comments()->orderBy('created_at', 'desc')->get();
+//        dd($comments);
+        return view('comments', compact('post', 'comments'));
+    }
+
+    public function sendComment(Request $request, $post_id)
+    {
+
+        $request->validate([
+            'content' => 'required',
+        ]);
+
+        Comment::create([
+            'content' => $request['content'],
+            'post_id' => $post_id,
+            'user_id' => session()->get('user_id'),
+        ]);
+
+        return back()->with('success', 'Comment sent successfully');
+    }
+
     public function show(string $id)
     {
         //
